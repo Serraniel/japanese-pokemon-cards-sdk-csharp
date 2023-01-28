@@ -1,8 +1,10 @@
-﻿namespace JpnCardsPokemonSdk.Api;
+﻿using JpnCardsPokemonSdk.Client.Endpoints;
 
-public class Set
+namespace JpnCardsPokemonSdk.Api;
+
+public class Set : EndpointObject
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     public int Id { get; set; }
 
@@ -10,7 +12,7 @@ public class Set
 
     public string? ImageUrl { get; set; }
 
-    public string Language { get; set; }
+    public string? Language { get; set; }
 
     public int Year { get; set; }
 
@@ -21,7 +23,7 @@ public class Set
 
     public int PrintedCardCount { get; set; }
 
-    public string SetCode { get; set; }
+    public string? SetCode { get; set; }
 
     public int Uuid { get; set; }
 }

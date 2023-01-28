@@ -1,14 +1,16 @@
-﻿namespace JpnCardsPokemonSdk.Api;
+﻿using JpnCardsPokemonSdk.Client.Endpoints;
 
-public class Card
+namespace JpnCardsPokemonSdk.Api;
+
+public class Card : EndpointObject
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     public int Id { get; set; }
 
     public Set? Set { get; set; }
 
-    public string[] Types { get; set; }
+    public string[]? Types { get; set; }
 
     public int Hp { get; set; } = -1;
 
@@ -32,11 +34,11 @@ public class Card
 
     public int? ConvertedRetreadCost { get; set; }
 
-    public string Supertype { get; set; }
+    public string? Supertype { get; set; }
 
     public string[]? Subtypes { get; set; }
 
-    public string Rarity { get; set; }
+    public string? Rarity { get; set; }
 
     // TODO: Type of property is not documented. Has to be evaluated at a later time.
     // public Legality[]? Legalities { get; set; }
@@ -47,7 +49,7 @@ public class Card
 
     public int Number { get; set; }
 
-    public string PrintedNumber { get; set; }
+    public string? PrintedNumber { get; set; }
 
     public int Uuid { get; set; }
 }

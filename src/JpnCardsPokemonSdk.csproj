@@ -22,6 +22,8 @@
     <Version>0.1.0-alpha</Version>
     <Authors>Serraniel</Authors>
     <Description>C# SDK for interaction with jpn-cards.com</Description>
+    <Nullable>enable</Nullable>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

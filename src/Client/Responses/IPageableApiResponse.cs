@@ -15,6 +15,11 @@ public interface IPageableApiResponse<TResponseType, TResponseGeneric>
 
     int TotalCount { get; set; }
 
+    bool HasNextPage()
+    {
+        return Page < TotalCount;
+    }
+
     void RememberRequestUri(string requestUri);
 
     Task<TResponseType> FetchNextPageAsync();

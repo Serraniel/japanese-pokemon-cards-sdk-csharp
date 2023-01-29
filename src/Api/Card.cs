@@ -1,4 +1,5 @@
-﻿using JpnCardsPokemonSdk.Client.Endpoints;
+﻿using System.Text.Json.Serialization;
+using JpnCardsPokemonSdk.Client.Endpoints;
 
 namespace JpnCardsPokemonSdk.Api;
 
@@ -8,6 +9,7 @@ public class Card : EndpointObject
 
     public int Id { get; set; }
 
+    [JsonPropertyName("setData")]
     public Set? Set { get; set; }
 
     public string[]? Types { get; set; }
@@ -30,6 +32,7 @@ public class Card : EndpointObject
     // TODO: Type of property is not documented. Has to be evaluated at a later time.
     // public Resistance[]? Ressistences { get; set; }
 
+    [JsonPropertyName("retreatCost")]
     public string[]? RetreatCosts { get; set; }
 
     public int? ConvertedRetreadCost { get; set; }
@@ -43,10 +46,15 @@ public class Card : EndpointObject
     // TODO: Type of property is not documented. Has to be evaluated at a later time.
     // public Legality[]? Legalities { get; set; }
 
+    public string? Artist { get; set; }
+
+    [JsonPropertyName("image_url")]
     public string? ImageUrl { get; set; }
 
+    [JsonPropertyName("card_url")]
     public string? CardUrl { get; set; }
 
+    [JsonPropertyName("sequenceNumber")]
     public int Number { get; set; }
 
     public string? PrintedNumber { get; set; }

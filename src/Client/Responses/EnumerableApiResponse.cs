@@ -15,7 +15,7 @@ public class EnumerableApiResponse<T> : IApiResponse<IEnumerable<T>>,
         (IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>)this).TotalCount / (
         (IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>)this).PageSize);
 
-    IEnumerable<T>? IApiResponse<IEnumerable<T>>.Data { get; set; }
+    public IEnumerable<T>? Data { get; set; }
 
     ApiClient? IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>.CurrentApiClient { get; set; }
 

@@ -16,3 +16,4 @@ internal class SetEndpoint : IApiEndpoint
     {
         return $"{((IApiEndpoint)this).ApiUri()}/uuid/{uuid}";
     }
+}

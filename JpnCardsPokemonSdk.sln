@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33318.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JpnCardsPokemonSdk", "src\JpnCardsPokemonSdk.csproj", "{D5C0B825-C6F2-48BB-B4C8-E416B545151E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JpnCardsPokemon.Tests", "JpnCardsPokemon.Tests\JpnCardsPokemon.Tests.csproj", "{13AA15F0-0CCD-4B59-A235-5DFB5C0B6C74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D5C0B825-C6F2-48BB-B4C8-E416B545151E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C0B825-C6F2-48BB-B4C8-E416B545151E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C0B825-C6F2-48BB-B4C8-E416B545151E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AA15F0-0CCD-4B59-A235-5DFB5C0B6C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AA15F0-0CCD-4B59-A235-5DFB5C0B6C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AA15F0-0CCD-4B59-A235-5DFB5C0B6C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AA15F0-0CCD-4B59-A235-5DFB5C0B6C74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

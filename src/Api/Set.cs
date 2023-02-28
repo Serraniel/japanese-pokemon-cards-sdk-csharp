@@ -5,6 +5,11 @@ namespace JpnCardsPokemonSdk.Api;
 
 public class Set : EndpointObject
 {
+    static Set()
+    {
+        EndpointFactory.RegisterTypeEndpoint<Set>(new SetEndpoint());
+    }
+
     public string? Name { get; set; }
 
     public int Id { get; set; }

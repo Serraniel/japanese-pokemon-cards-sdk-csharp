@@ -25,6 +25,13 @@ public class EnumerableApiResponse<T> : IApiResponse<IEnumerable<T>>,
 
     int IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>.Count { get; set; }
 
+#if !(NETCOREAPP3_1_OR_GREATER || NETSTANDARD2_1_OR_GREATER)
+    bool IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>.HasNextPage()
+    {
+        return ((IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>)this).Page < ((IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>)this).TotalCount;
+    }
+#endif
+
     int IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>.TotalCount { get; set; }
 
     async Task<EnumerableApiResponse<T>> IPageableApiResponse<EnumerableApiResponse<T>, IEnumerable<T>>.

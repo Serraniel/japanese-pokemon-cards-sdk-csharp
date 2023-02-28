@@ -15,10 +15,14 @@ public interface IPageableApiResponse<TResponseType, TResponseGeneric>
 
     int TotalCount { get; set; }
 
+#if NETCOREAPP3_1_OR_GREATER || NETSTANDARD2_1_OR_GREATER
     bool HasNextPage()
     {
         return Page < TotalCount;
     }
+#else
+    bool HasNextPage();
+#endif
 
     void RememberRequestUri(string requestUri);
 

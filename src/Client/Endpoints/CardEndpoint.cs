@@ -6,4 +6,14 @@ internal class CardEndpoint : IApiEndpoint
     {
         return "card";
     }
+
+    string IApiEndpoint.IdQuery(int id)
+    {
+        return $"{((IApiEndpoint)this).ApiUri()}/id={id}";
+    }
+
+    string IApiEndpoint.UuidQuery(int uuid)
+    {
+        return $"{((IApiEndpoint)this).ApiUri()}/uuid={uuid}";
+    }
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using JpnCardsPokemonSdk.Client.Endpoints;
+using JpnCardsPokemonSdk.Api;
 using JpnCardsPokemonSdk.Client.Responses;
 
 namespace JpnCardsPokemonSdk.Client;
@@ -33,6 +34,18 @@ public class ApiClient
         _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         _client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(
             new ProductHeaderValue("JpnCardsPokemonSdkCS", GetType().Assembly.GetName().Version?.ToString())));
+    }
+
+    private async Task<T?> FetchInternalAsync<T>(string requestUri)
+    {
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            IncludeFields = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        };
+
+        return await _client.GetFromJsonAsync<T>(requestUri, options);
     }
 
     public async Task<TResponseType?> FetchDataAsync<TResponseType, TResponseGeneric>(string requestUri)
@@ -62,6 +75,29 @@ public class ApiClient
         return result;
     }
 
+    private string SetQuery(string? filter)
+    {
+        var result = "set";
+
+        return !string.IsNullOrEmpty(filter) ? $"{result}/{filter.TrimStart('/')}" : result;
+    }
+
+    public async Task<IEnumerable<Set>> FetchSetsAsync()
+    {
+        return await FetchInternalAsync<IEnumerable<Set>>(SetQuery(null)) ?? Enumerable.Empty<Set>();
+    }
+
+    public async Task<Set?> FetchSetById(int id)
+    {
+        return await FetchInternalAsync<Set>(SetQuery(id.ToString()));
+    }
+
+    public async Task<Set?> FetchSetByUuid(int uuid)
+    {
+        return await FetchInternalAsync<Set>(SetQuery("uuid/" + uuid));
+    }
+
+    /*
     public async Task<EnumerableApiResponse<T>?> FetchDataAsync<T>(string? query = null, int page = 1)
         where T : EndpointObject
     {
@@ -82,5 +118,5 @@ public class ApiClient
         var endpoint = EndpointFactory.GetApiEndpoint<T>();
 
         return await FetchDataAsync<SingleApiResponse<T>, T>($"{endpoint.ApiUri()}/uuid={uuid}");
-    }
+    }*/
 }

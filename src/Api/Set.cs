@@ -22,6 +22,8 @@ public class Set : EndpointObject
 
     public string? Language { get; set; }
 
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    [JsonConverter(typeof(NoneIntJsonConverter))] // set hashes in card objects sometimes have "none" as year.
     public int Year { get; set; }
 
     // TODO: According to documentation the property currently is not supported.

@@ -3,14 +3,14 @@
 namespace JpnCardsPokemonSdk.Utils.QueryFilter;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class QueryFilterAttribute : Attribute
+public class QueryFilterNameAttribute : Attribute
 {
-    public QueryFilterAttribute(string? paramName)
+    public QueryFilterNameAttribute(string? paramName)
     {
         ParamName = paramName;
     }
 
-    public QueryFilterAttribute() : this(null)
+    public QueryFilterNameAttribute() : this(null)
     {
     }
 

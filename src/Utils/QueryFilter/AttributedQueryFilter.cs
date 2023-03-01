@@ -14,7 +14,7 @@ public abstract class AttributedQueryFilter : IQueryFilter
         var properties = GetType().GetProperties();
         foreach (var propertyInfo in properties)
         {
-            var attribute = propertyInfo.GetCustomAttribute<QueryFilterAttribute>();
+            var attribute = propertyInfo.GetCustomAttribute<QueryFilterNameAttribute>();
 
             if (attribute == null)
                 continue;

@@ -2,23 +2,23 @@
 
 public class CardQueryFilter : AttributedQueryFilter
 {
-    [QueryFilter("id")] public int? Id { get; set; }
+    [QueryFilterName("id")] public int? Id { get; set; }
 
-    [QueryFilter("name")] public string? Name { get; set; }
+    [QueryFilterName("name")] public string? Name { get; set; }
 
-    [QueryFilter("set_id")] public int? SetId { get; set; }
+    [QueryFilterName("set_id")] public int? SetId { get; set; }
 
-    [QueryFilter("illustrator")] public string? Artist { get; set; }
+    [QueryFilterName("illustrator")] public string? Artist { get; set; }
 
-    [QueryFilter("p_no")] public string? PrintedNumber { get; set; }
+    [QueryFilterName("p_no")] public string? PrintedNumber { get; set; }
 
-    [QueryFilter("uuid")] public int? Uuid { get; set; }
+    [QueryFilterName("uuid")] public int? Uuid { get; set; }
 
-    [QueryFilter("rarity")] public string? Rarity { get; set; }
+    [QueryFilterName("rarity")] public string? Rarity { get; set; }
 
-    [QueryFilter("subtype")] public string? Subtype { get; set; }
+    [QueryFilterName("subtype")] public string? Subtype { get; set; }
 
-    [QueryFilter("type")] public string? Type { get; set; }
+    [QueryFilterName("type")] public string? Type { get; set; }
 
-    [QueryFilter("set_code")] public string? SetCode { get; set; }
+    [QueryFilterName("set_code")] public string? SetCode { get; set; }
 }

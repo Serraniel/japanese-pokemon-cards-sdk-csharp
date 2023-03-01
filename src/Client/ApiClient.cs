@@ -45,15 +45,21 @@ public class ApiClient
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
         };
 
-        var response = await _client.GetFromJsonAsync<TResponseType>(requestUri, options);
+        var response = await _client.GetFromJsonAsync<TResponseGeneric>(requestUri, options);
 
-        if (response is IPageableApiResponse<TResponseType, TResponseGeneric> pageAbleApiResponse)
+        // TODO: Find good way to handle pageable requests
+        /*if (response is IPageableApiResponse<TResponseType, TResponseGeneric> pageAbleApiResponse)
         {
             pageAbleApiResponse.CurrentApiClient = this;
             pageAbleApiResponse.RememberRequestUri(requestUri);
-        }
+        }*/
 
-        return response;
+        var result = new TResponseType
+        {
+            Data = response
+        };
+
+        return result;
     }
 
     public async Task<EnumerableApiResponse<T>?> FetchDataAsync<T>(string? query = null, int page = 1)
@@ -71,7 +77,7 @@ public class ApiClient
         return await FetchDataAsync<SingleApiResponse<T>, T>($"{endpoint.ApiUri()}/id={id}");
     }
 
-    public async Task<SingleApiResponse<T>?> FetchByUuigAsync<T>(int uuid) where T : EndpointObject
+    public async Task<SingleApiResponse<T>?> FetchByUuidAsync<T>(int uuid) where T : EndpointObject
     {
         var endpoint = EndpointFactory.GetApiEndpoint<T>();
 

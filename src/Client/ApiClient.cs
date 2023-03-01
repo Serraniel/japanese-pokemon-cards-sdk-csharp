@@ -77,9 +77,7 @@ public class ApiClient
 
     private string SetQuery(string? filter)
     {
-        var result = "set";
-
-        return !string.IsNullOrEmpty(filter) ? $"{result}/{filter.TrimStart('/')}" : result;
+        return !string.IsNullOrEmpty(filter) ? $"set/{filter.TrimStart('/')}" : "set";
     }
 
     public async Task<IEnumerable<Set>> FetchSetsAsync()
@@ -94,7 +92,7 @@ public class ApiClient
 
     public async Task<Set?> FetchSetByUuid(int uuid)
     {
-        return await FetchInternalAsync<Set>(SetQuery("uuid/" + uuid));
+        return await FetchInternalAsync<Set>(SetQuery($"uuid/{uuid}"));
     }
 
     /*

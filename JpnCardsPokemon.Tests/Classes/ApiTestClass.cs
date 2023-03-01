@@ -1,4 +1,4 @@
-﻿using JpnCardsPokemonSdk.Client;
+﻿using JpnCardsPokemon.Sdk.Client;
 
 namespace JpnCardsPokemon.Tests.Classes;
 

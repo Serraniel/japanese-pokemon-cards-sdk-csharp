@@ -1,6 +1,6 @@
 using JpnCardsPokemon.Tests.Classes;
 
-namespace JpnCardsPokemon.Tests.Tests;
+namespace JpnCardsPokemon.Tests;
 
 public class SetTests : ApiTestClass
 {

@@ -3,7 +3,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 
-namespace JpnCardsPokemonSdk.Utils.QueryFilter;
+namespace JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
 public abstract class AttributedQueryFilterBuilder : IQueryFilterBuilder
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JpnCardsPokemonSdk.Utils.QueryFilter;
+namespace JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
 [AttributeUsage(AttributeTargets.Property)]
 public class QueryFilterNameAttribute : Attribute

@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace JpnCardsPokemonSdk.Utils.JsonConverter;
+namespace JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
 internal class NoneIntJsonConverter : JsonConverter<int>
 {

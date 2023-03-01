@@ -1,4 +1,4 @@
-﻿namespace JpnCardsPokemonSdk.Utils.QueryFilter;
+﻿namespace JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
 public class CardQueryFilterBuilder : AttributedQueryFilterBuilder
 {

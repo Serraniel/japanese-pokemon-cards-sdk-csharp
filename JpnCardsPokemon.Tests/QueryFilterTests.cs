@@ -1,6 +1,6 @@
-﻿using JpnCardsPokemonSdk.Utils.QueryFilter;
+﻿using JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
-namespace JpnCardsPokemon.Tests.Tests;
+namespace JpnCardsPokemon.Tests;
 
 public class QueryFilterTests
 {

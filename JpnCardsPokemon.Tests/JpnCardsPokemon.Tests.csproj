@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JpnCardsPokemon.Sdk\JpnCardsPokemon.Sdk.csproj" />
     <ProjectReference Include="..\src\JpnCardsPokemonSdk.csproj" />
   </ItemGroup>
 

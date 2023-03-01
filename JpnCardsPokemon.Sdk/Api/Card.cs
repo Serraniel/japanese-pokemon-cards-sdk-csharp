@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace JpnCardsPokemonSdk.Api;
+namespace JpnCardsPokemon.Sdk.Api;
 
 public class Card
 {

@@ -7,10 +7,10 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using JpnCardsPokemonSdk.Api;
-using JpnCardsPokemonSdk.Utils.QueryFilter;
+using JpnCardsPokemon.Sdk.Api;
+using JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
-namespace JpnCardsPokemonSdk.Client;
+namespace JpnCardsPokemon.Sdk.Client;
 
 public class ApiClient
 {

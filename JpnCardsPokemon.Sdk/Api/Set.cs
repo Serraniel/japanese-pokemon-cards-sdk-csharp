@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using JpnCardsPokemonSdk.Utils.JsonConverter;
+using JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
-namespace JpnCardsPokemonSdk.Api;
+namespace JpnCardsPokemon.Sdk.Api;
 
 public class Set
 {

@@ -1,7 +1,7 @@
-﻿using JpnCardsPokemon.Tests.Classes;
-using JpnCardsPokemonSdk.Utils.QueryFilter;
+﻿using JpnCardsPokemon.Sdk.Utils.QueryFilter;
+using JpnCardsPokemon.Tests.Classes;
 
-namespace JpnCardsPokemon.Tests.Tests.Tests;
+namespace JpnCardsPokemon.Tests;
 
 public class CardTests : ApiTestClass
 {

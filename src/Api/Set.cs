@@ -1,9 +1,9 @@
 ﻿using System.Text.Json.Serialization;
-using JpnCardsPokemonSdk.Client.Endpoints;
+using JpnCardsPokemonSdk.Utils.JsonConverter;
 
 namespace JpnCardsPokemonSdk.Api;
 
-public class Set : EndpointObject
+public class Set
 {
     static Set()
     {

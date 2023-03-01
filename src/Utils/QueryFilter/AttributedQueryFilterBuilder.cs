@@ -20,7 +20,7 @@ public abstract class AttributedQueryFilterBuilder : IQueryFilterBuilder
                 continue;
 
             var paramName = attribute.ParamName ?? propertyInfo.Name;
-            var value = propertyInfo.GetValue(this).ToString();
+            var value = propertyInfo.GetValue(this)?.ToString();
             if (!string.IsNullOrEmpty(value)) filterBucket.Add(new KeyValuePair<string, string>(paramName, value));
         }
 

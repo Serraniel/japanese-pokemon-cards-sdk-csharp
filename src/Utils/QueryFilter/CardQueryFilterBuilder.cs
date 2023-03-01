@@ -1,6 +1,6 @@
 ﻿namespace JpnCardsPokemonSdk.Utils.QueryFilter;
 
-public class CardQueryFilter : AttributedQueryFilter
+public class CardQueryFilterBuilder : AttributedQueryFilterBuilder
 {
     [QueryFilterName("id")] public int? Id { get; set; }
 

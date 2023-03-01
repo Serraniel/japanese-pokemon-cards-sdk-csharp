@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JpnCardsPokemonSdk.Utils.QueryFilter;
 
-public abstract class AttributedQueryFilter : IQueryFilter
+public abstract class AttributedQueryFilterBuilder : IQueryFilterBuilder
 {
     public string BuildQueryString()
     {

@@ -1,6 +1,6 @@
 ﻿namespace JpnCardsPokemonSdk.Utils.QueryFilter;
 
-public interface IQueryFilter
+public interface IQueryFilterBuilder
 {
     string BuildQueryString();
 }

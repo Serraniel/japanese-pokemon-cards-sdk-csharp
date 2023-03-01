@@ -8,8 +8,7 @@ public class Card
 
     public int Id { get; set; }
 
-    [JsonPropertyName("setData")]
-    public Set? Set { get; set; }
+    [JsonPropertyName("setData")] public Set? Set { get; set; }
 
     public string[]? Types { get; set; }
 
@@ -31,10 +30,9 @@ public class Card
     // TODO: Type of property is not documented. Has to be evaluated at a later time.
     // public Resistance[]? Ressistences { get; set; }
 
-    [JsonPropertyName("retreatCost")]
-    public string[]? RetreatCosts { get; set; }
+    [JsonPropertyName("retreatCost")] public string[]? RetreatCosts { get; set; }
 
-    public int? ConvertedRetreadCost { get; set; }
+    public int? ConvertedRetreatCost { get; set; }
 
     public string? Supertype { get; set; }
 
@@ -47,14 +45,11 @@ public class Card
 
     public string? Artist { get; set; }
 
-    [JsonPropertyName("image_url")]
     public string? ImageUrl { get; set; }
 
-    [JsonPropertyName("card_url")]
     public string? CardUrl { get; set; }
 
-    [JsonPropertyName("sequenceNumber")]
-    public int Number { get; set; }
+    [JsonPropertyName("sequenceNumber")] public int Number { get; set; }
 
     public string? PrintedNumber { get; set; }
 

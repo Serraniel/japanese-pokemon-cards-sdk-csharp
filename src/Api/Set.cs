@@ -5,20 +5,13 @@ namespace JpnCardsPokemonSdk.Api;
 
 public class Set
 {
-    static Set()
-    {
-        EndpointFactory.RegisterTypeEndpoint<Set>(new SetEndpoint());
-    }
-
     public string? Name { get; set; }
 
     public int Id { get; set; }
 
-    [JsonPropertyName("source_url")]
-    public string? SourceUrl { get; set; }
+    [JsonPropertyName("source_url")] public string? SourceUrl { get; set; }
 
-    [JsonPropertyName("image_url")]
-    public string? ImageUrl { get; set; }
+    [JsonPropertyName("image_url")] public string? ImageUrl { get; set; }
 
     public string? Language { get; set; }
 
@@ -29,14 +22,13 @@ public class Set
     // TODO: According to documentation the property currently is not supported.
     // public DateOnly? Date { get; set; }
 
-    [JsonPropertyName("card_count")]
-    public int TotalCardCount { get; set; }
+    [JsonPropertyName("card_count")] public int TotalCardCount { get; set; }
 
     [JsonPropertyName("printed_count")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
     public int PrintedCardCount { get; set; }
 
-    [JsonPropertyName("set_code")]
-    public string? SetCode { get; set; }
+    [JsonPropertyName("set_code")] public string? SetCode { get; set; }
 
     public int Uuid { get; set; }
 }

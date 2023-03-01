@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using JpnCardsPokemonSdk.Api;
 using JpnCardsPokemonSdk.Client.Responses;
+using JpnCardsPokemonSdk.Utils.QueryFilter;
 
 namespace JpnCardsPokemonSdk.Client;
 
@@ -93,6 +94,29 @@ public class ApiClient
     public async Task<Set?> FetchSetByUuid(int uuid)
     {
         return await FetchInternalAsync<Set>(SetQuery($"uuid/{uuid}"));
+    }
+
+    public async Task<IEnumerable<Card>> FetchCardsAsync(string query)
+    {
+        if (string.IsNullOrWhiteSpace(query))
+            throw new Exception("Query string required");
+
+        // JSON response is wrapped into a data property, so we parse as JsonDocument first before deserialization.
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            IncludeFields = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        };
+
+        var jsonData = await FetchInternalAsync<JsonDocument>($"card/{query}");
+        return jsonData?.RootElement.GetProperty("data").Deserialize<IEnumerable<Card>>(options) ??
+               Enumerable.Empty<Card>();
+    }
+
+    public async Task<IEnumerable<Card>?> FetchCardsAsync(IQueryFilterBuilder filterBuilder)
+    {
+        return await FetchCardsAsync(filterBuilder.BuildQueryString());
     }
 
     /*

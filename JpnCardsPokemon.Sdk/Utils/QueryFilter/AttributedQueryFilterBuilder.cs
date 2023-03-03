@@ -5,8 +5,13 @@ using System.Text;
 
 namespace JpnCardsPokemon.Sdk.Utils.QueryFilter;
 
+/// <summary>
+///     Abstract Implementation of an <see cref="IQueryFilterBuilder" /> which builts the filter string based on
+///     <see cref="QueryFilterNameAttribute" /> attributed properties.
+/// </summary>
 public abstract class AttributedQueryFilterBuilder : IQueryFilterBuilder
 {
+    /// <inheritdoc cref="IQueryFilterBuilder.BuildQueryString" />
     public string BuildQueryString()
     {
         var filterBucket = new List<KeyValuePair<string, string>>();

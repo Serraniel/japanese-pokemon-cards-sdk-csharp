@@ -10,7 +10,7 @@ namespace JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
 internal class CardPricesJsonConverter : JsonConverter<IEnumerable<CardPrice>>
 {
-    public override IEnumerable<CardPrice>? Read(ref Utf8JsonReader reader, Type typeToConvert,
+    public override IEnumerable<CardPrice> Read(ref Utf8JsonReader reader, Type typeToConvert,
         JsonSerializerOptions options)
     {
         var resultBucket = new List<CardPrice>();

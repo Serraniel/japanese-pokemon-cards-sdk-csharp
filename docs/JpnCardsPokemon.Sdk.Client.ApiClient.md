@@ -15,6 +15,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 | :--- | :--- |
 | [ApiClient()](JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient().md 'JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient()') | Creates a new instance of the ApiClient. |
 | [ApiClient(HttpClient)](JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient(System.Net.Http.HttpClient).md 'JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient(System.Net.Http.HttpClient)') | Creates a new instance of the ApiClient. |
+| [ApiClient(SocketsHttpHandler)](JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient(System.Net.Http.SocketsHttpHandler).md 'JpnCardsPokemon.Sdk.Client.ApiClient.ApiClient(System.Net.Http.SocketsHttpHandler)') | Creates a new instance of the ApiClient. |
 
 | Methods | |
 | :--- | :--- |

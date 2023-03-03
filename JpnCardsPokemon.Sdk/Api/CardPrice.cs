@@ -15,7 +15,7 @@ public class CardPrice
 
     [JsonPropertyName("dateUpdated")] public DateTime? UpdatedDate { get; set; }
 
-    public string? ListingUrl { get; set; }
+    [JsonPropertyName("listingUrl")] public string? ListingUrl { get; set; }
 
     public string? Seller { get; set; }
 }

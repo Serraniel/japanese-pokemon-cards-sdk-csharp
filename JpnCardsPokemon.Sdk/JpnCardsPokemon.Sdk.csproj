@@ -19,7 +19,7 @@
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>Japanese Pokemon Cards SDK</Title>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.0-beta</Version>
     <Authors>Serraniel</Authors>
     <Description>C# SDK for interaction with jpn-cards.com</Description>
     <Nullable>enable</Nullable>

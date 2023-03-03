@@ -1,4 +1,8 @@
 # japanese-pokemon-cards-sdk-csharp
+
+[![nuget](https://img.shields.io/nuget/vpre/JpnCardsPokemon.Sdk?style=flat-square)](https://www.nuget.org/packages/JpnCardsPokemon.Sdk/) [![downloads](https://img.shields.io/nuget/dt/JpnCardsPokemon.Sdk?style=flat-square)](https://www.nuget.org/packages/JpnCardsPokemon.Sdk/) ![license](https://img.shields.io/github/license/serraniel/japanese-pokemon-cards-sdk-csharp?style=flat-square) ![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/serraniel/japanese-pokemon-cards-sdk-csharp?style=flat-square) ![dependencies](https://img.shields.io/librariesio/github/serraniel/japanese-pokemon-cards-sdk-csharp?style=flat-square) 
+
+
 Dependency-free C# SDK for interaction with [jpn-cards.com](https://jpn-cards-site.readthedocs.io/en/latest/home/). With the SDK you can gather information about Japanese Pokémon TCG. This includes information about sets and cards, including current price information if available. 
 The data is provided by an external API. Please check the above link for more information. The SDK only fetches their current JSON data and wraps them into object. 
 

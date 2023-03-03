@@ -8,7 +8,7 @@ using JpnCardsPokemon.Sdk.Api;
 
 namespace JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
-internal class CardPriceConverter : JsonConverter<IEnumerable<CardPrice>>
+internal class CardPricesJsonConverter : JsonConverter<IEnumerable<CardPrice>>
 {
     public override IEnumerable<CardPrice>? Read(ref Utf8JsonReader reader, Type typeToConvert,
         JsonSerializerOptions options)

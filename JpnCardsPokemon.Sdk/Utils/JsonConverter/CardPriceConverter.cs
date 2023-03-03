@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -81,8 +82,9 @@ internal class CardPriceConverter : JsonConverter<IEnumerable<CardPrice>>
                                     value = reader.GetString();
                                 else if (propertyType == typeof(decimal))
                                     value = reader.GetDecimal();
-                                else if (propertyType == typeof(DateTime))
-                                    if (DateTime.TryParse(reader.GetString(), out var dt))
+                                else if (propertyType == typeof(DateTime?))
+                                    if (DateTime.TryParseExact(reader.GetString(), "MM/dd/yyyy",
+                                            CultureInfo.InvariantCulture, DateTimeStyles.None, out var dt))
                                         value = dt;
 
                                 property.SetValue(cardPrice, value);

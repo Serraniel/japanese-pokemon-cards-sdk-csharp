@@ -32,7 +32,7 @@ public class Card
     // TODO: Type of property is not documented. Has to be evaluated at a later time.
     // public Resistance[]? Ressistences { get; set; }
 
-    [JsonConverter(typeof(CardPriceConverter))]
+    [JsonConverter(typeof(CardPricesJsonConverter))]
     public IEnumerable<CardPrice>? Prices { get; set; }
 
     [JsonPropertyName("retreatCost")] public string[]? RetreatCosts { get; set; }

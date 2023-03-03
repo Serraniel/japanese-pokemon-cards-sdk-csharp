@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JpnCardsPokemon.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:JpnCardsPokemon.Sdk.Api.Card">
+            <summary>
+                Represents a card object from the web api.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Name">
+            <summary>
+                The name of the card.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Id">
+            <summary>
+                The internal identification number that the card is given. Used to query for this single card.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Set">
+            <summary>
+                Reduced information about the set the card belongs to.
+            </summary>
+            <remarks>May contain basic information only. It´s recommended to fetch the fully <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Set" /> separately.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Types">
+            <summary>
+                The energy type of types the card is.
+            </summary>
+            <remarks>Almost always will be a single value.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Hp">
+            <summary>
+                The amount of HP the card has.
+            </summary>
+            <remarks>If the card does not have HP, the value will be -1.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.EvolvesFrom">
+            <summary>
+                If the card evolves from another card, this field will denote the name of the pre-evolution.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Rules">
+            <summary>
+                Describes rules the card is bound to. Mainly for cards with a rule box and certain Trainers.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Prices">
+            <summary>
+                A list of known prices for this card.
+            </summary>
+            <remarks>May contain entries from different sellers, versions and conditions.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.RetreatCosts">
+            <summary>
+                List of the energies required to retreat.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.ConvertedRetreatCost">
+            <summary>
+                The total number of energies needed to retreat.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Supertype">
+            <summary>
+                The supertype the card is.
+            </summary>
+            <remarks>Only possibilities are 'Pokemon', 'Trainer' or 'Energy'.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Subtypes">
+            <summary>
+                The subsets that the card falls into. For example 'Single Strike Pokemon', 'Pokemon VMAX', etc.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Rarity">
+            <summary>
+                The rarity of the card.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Artist">
+            <summary>
+                The card art's artist.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.ImageUrl">
+            <summary>
+                The url pointing to the card's image.
+            </summary>
+            <remarks>
+                If there is no card image, then this will instead point to
+                https://assets.tcgcollector.com/build/images/default-card-image.789f6232.png.
+            </remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.CardUrl">
+            <summary>
+                The URL which leads to the original card URL data.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Number">
+            <summary>
+                The sequential number of the card (applicable to Secret Rares).
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.PrintedNumber">
+            <summary>
+                The number printed on the card. Will be the same as <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Number" /> almost always. Is relevant for
+                promotional cards, such as SWSH001.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Card.Uuid">
+            <summary>
+                A stable id for earch card. Output is an eight digit integer which is unique for each card. While the cards'
+                <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Id" /> may change over time, the uuid should always remain stable and constant.
+            </summary>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Api.CardPrice">
+            <summary>
+                Contains information about card price.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.Version">
+            <summary>
+                Specifies the card version. Almost always will be 'Regular' but may contain other versions like 'Reverse Holo',
+                etc.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.Condition">
+            <summary>
+                Specifies the card condition. Often will be a rating in format of 'A+', 'A', etc. but also can be 'NM' or other
+                similar descriptive strings.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.Price">
+            <summary>
+                The actual price for the specified version and condition.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.Currency">
+            <summary>
+                The currency used for the <see cref="P:JpnCardsPokemon.Sdk.Api.CardPrice.Price" />.
+            </summary>
+            <remarks>Almost always will be 'JYP' for Japanese Yen.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.UpdatedDate">
+            <summary>
+                Date when the price information was updated last.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.ListingUrl">
+            <summary>
+                An URL to the listing.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.CardPrice.Seller">
+            <summary>
+                Name of the seller who is listing the card.
+            </summary>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Api.Set">
+            <summary>
+                Represents a set object from the web api.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.Name">
+            <summary>
+                The name of the set.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.Id">
+            <summary>
+                The internal identification number that the set is given. Used to query for information about this single set or
+                for all cards in this single set.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.SourceUrl">
+            <summary>
+                The URL to a page which has more information about the set.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.ImageUrl">
+            <summary>
+                A URL to the official set's image.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.Language">
+            <summary>
+                The language that the cards in the set are printed in.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.Year">
+            <summary>
+                The year the set was released.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.TotalCardCount">
+            <summary>
+                The total number of cards in the set.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.PrintedCardCount">
+            <summary>
+                The number of cards in the set that is printed on the card. This differs from the set's
+                <see cref="P:JpnCardsPokemon.Sdk.Api.Set.TotalCardCount" /> in sets with Secret Rare cards.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.SetCode">
+            <summary>
+                The shorthand code for the set.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Api.Set.Uuid">
+            <summary>
+                A stable id for earch card. Output is an eight digit integer which is unique for each card. While the cards'
+                <see cref="P:JpnCardsPokemon.Sdk.Api.Set.Id" /> may change over time, the uuid should always remain stable and constant.
+            </summary>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Client.ApiClient">
+            <summary>
+                A client to interact with the web api.
+            </summary>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.#ctor(System.Net.Http.SocketsHttpHandler)">
+            <summary>
+                Creates a new instance of the ApiClient.
+            </summary>
+            <param name="handler">Can pass a <see cref="T:System.Net.Http.SocketsHttpHandler" /> to use for the internal http client.</param>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.#ctor">
+            <summary>
+                Creates a new instance of the ApiClient.
+            </summary>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+                Creates a new instance of the ApiClient.
+            </summary>
+            <param name="client">Can pass a http client to use.</param>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.FetchSetsAsync">
+            <summary>
+                Fetches all <see cref="T:JpnCardsPokemon.Sdk.Api.Set" />.
+            </summary>
+            <returns>Returns an enumerable containing all <see cref="T:JpnCardsPokemon.Sdk.Api.Set" />.</returns>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.FetchSetById(System.Int32)">
+            <summary>
+                Fetches a <see cref="T:JpnCardsPokemon.Sdk.Api.Set" /> by its id.
+            </summary>
+            <param name="id">Id of the <see cref="T:JpnCardsPokemon.Sdk.Api.Set" /> to fetch.</param>
+            <returns>If existing returns the matching <see cref="T:JpnCardsPokemon.Sdk.Api.Set" />.</returns>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.FetchSetByUuid(System.Int32)">
+            <summary>
+                Fetches a <see cref="T:JpnCardsPokemon.Sdk.Api.Set" /> by its uuid.
+            </summary>
+            <param name="uuid">Uuid of the <see cref="T:JpnCardsPokemon.Sdk.Api.Set" /> to fetch.</param>
+            <returns>If existing returns the matching <see cref="T:JpnCardsPokemon.Sdk.Api.Set" />.</returns>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.FetchCardsAsync(System.String)">
+            <summary>
+                Fetches <see cref="T:JpnCardsPokemon.Sdk.Api.Card" /> from a search query.
+            </summary>
+            <param name="query">The search query.</param>
+            <returns>Returns an enumerable of <see cref="T:JpnCardsPokemon.Sdk.Api.Card" /> matching the <see cref="!:query" />.</returns>
+            <exception cref="T:System.Exception">Thrown if the <see cref="!:query" /> is empty.</exception>
+            <remarks>
+                At least one filter query must be specified. More information about the query format can be found at
+                https://jpn-cards-site.readthedocs.io/en/latest/api_docs/pokemon/v2/v2_api/#card-queries.
+            </remarks>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Client.ApiClient.FetchCardsAsync(JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder)">
+            <summary>
+                Fetches <see cref="T:JpnCardsPokemon.Sdk.Api.Card" /> from a search query.
+            </summary>
+            <param name="filterBuilder">Configured query builder to generate the search query.</param>
+            <returns>Returns an enumerable of <see cref="T:JpnCardsPokemon.Sdk.Api.Card" /> matching the <see cref="!:query" />.</returns>
+            <remarks> At least one filter must be specified.</remarks>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.AttributedQueryFilterBuilder">
+            <summary>
+                Abstract Implementation of an <see cref="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder" /> which builts the filter string based on
+                <see cref="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.QueryFilterNameAttribute" /> attributed properties.
+            </summary>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Utils.QueryFilter.AttributedQueryFilterBuilder.BuildQueryString">
+            <inheritdoc cref="M:JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder.BuildQueryString" />
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder">
+            <summary>
+                <see cref="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder" /> for <see cref="T:JpnCardsPokemon.Sdk.Api.Card" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Id">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Id" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Name">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Name" />.
+            </summary>
+            <remarks>Must match the full name.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.SetId">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Set" /> by <see cref="P:JpnCardsPokemon.Sdk.Api.Set.Id" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Artist">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Artist" />.
+            </summary>
+            <remarks>Must match the full name.</remarks>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.PrintedNumber">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.PrintedNumber" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Uuid">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Uuid" />.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Rarity" -->
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Subtype">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Subtypes" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Type">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Types" />.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.SetCode">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Set" /> by <see cref="P:JpnCardsPokemon.Sdk.Api.Set.SetCode" />.
+            </summary>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder">
+            <summary>
+                Defines an interface for a filter builder.
+            </summary>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Utils.QueryFilter.IQueryFilterBuilder.BuildQueryString">
+            <summary>
+                Builds the query filter to use for the api request.
+            </summary>
+            <returns>Returns the built query filter.</returns>
+        </member>
+        <member name="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.QueryFilterNameAttribute">
+            <summary>
+                Attribute which can be used to mark a property as a filter for the <see cref="T:JpnCardsPokemon.Sdk.Utils.QueryFilter.AttributedQueryFilterBuilder" />.
+            </summary>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Utils.QueryFilter.QueryFilterNameAttribute.#ctor(System.String)">
+            <summary>
+                Creates a new query filter attribute with a custom filter name.
+            </summary>
+            <param name="paramName">Custom filter name for the web request.</param>
+        </member>
+        <member name="M:JpnCardsPokemon.Sdk.Utils.QueryFilter.QueryFilterNameAttribute.#ctor">
+            <summary>
+                Creates a new query filter attribute.
+            </summary>
+        </member>
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.QueryFilterNameAttribute.ParamName">
+            <summary>
+                Filter name for the web api.
+            </summary>
+        </member>
+    </members>
+</doc>

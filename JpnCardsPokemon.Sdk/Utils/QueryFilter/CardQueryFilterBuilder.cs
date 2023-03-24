@@ -46,7 +46,7 @@ public class CardQueryFilterBuilder : AttributedQueryFilterBuilder
     public int? Uuid { get; set; }
 
     /// <summary>
-    ///     Sets a filter for the <see cref="Card.Rarity/>.
+    ///     Sets a filter for the <see cref="Card.Rarity" />.
     /// 
     /// </summary>
     [QueryFilterName("rarity")]

@@ -324,7 +324,12 @@
                 Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Uuid" />.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Rarity" -->
+        <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Rarity">
+            <summary>
+                Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Rarity" />.
+            
+            </summary>
+        </member>
         <member name="P:JpnCardsPokemon.Sdk.Utils.QueryFilter.CardQueryFilterBuilder.Subtype">
             <summary>
                 Sets a filter for the <see cref="P:JpnCardsPokemon.Sdk.Api.Card.Subtypes" />.

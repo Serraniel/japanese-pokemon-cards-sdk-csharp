@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
 namespace JpnCardsPokemon.Sdk.Api;
 
@@ -12,6 +13,7 @@ public class CardPrice
     ///     Specifies the card version. Almost always will be 'Regular' but may contain other versions like 'Reverse Holo',
     ///     etc.
     /// </summary>
+    [JsonPropertyName("variant")]
     public string? Version { get; set; }
 
     /// <summary>
@@ -37,6 +39,7 @@ public class CardPrice
     ///     Date when the price information was updated last.
     /// </summary>
     [JsonPropertyName("dateUpdated")]
+    [JsonConverter(typeof(CustomDateTimeConverter))]
     public DateTime? UpdatedDate { get; set; }
 
     /// <summary>
@@ -48,5 +51,6 @@ public class CardPrice
     /// <summary>
     ///     Name of the seller who is listing the card.
     /// </summary>
+    [JsonPropertyName("vendor")]
     public string? Seller { get; set; }
 }

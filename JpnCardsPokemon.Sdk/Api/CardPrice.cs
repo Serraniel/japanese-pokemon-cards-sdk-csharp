@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
 namespace JpnCardsPokemon.Sdk.Api;
 
@@ -38,6 +39,7 @@ public class CardPrice
     ///     Date when the price information was updated last.
     /// </summary>
     [JsonPropertyName("dateUpdated")]
+    [JsonConverter(typeof(CustomDateTimeConverter))]
     public DateTime? UpdatedDate { get; set; }
 
     /// <summary>

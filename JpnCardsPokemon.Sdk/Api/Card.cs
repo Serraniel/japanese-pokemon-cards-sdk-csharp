@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using JpnCardsPokemon.Sdk.Utils.JsonConverter;
 
 namespace JpnCardsPokemon.Sdk.Api;
 
@@ -64,7 +63,6 @@ public class Card
     ///     A list of known prices for this card.
     /// </summary>
     /// <remarks>May contain entries from different sellers, versions and conditions.</remarks>
-    [JsonConverter(typeof(CardPricesJsonConverter))]
     public IEnumerable<CardPrice>? Prices { get; set; }
 
     /// <summary>

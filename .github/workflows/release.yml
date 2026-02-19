@@ -3,6 +3,11 @@ name: Release & Publish
 on:
   push:
     branches: [main]
+    paths:
+      - "JpnCardsPokemon.Sdk/**"
+      - "JpnCardsPokemon.Tests/**"
+      - "*.sln"
+      - ".github/workflows/release.yml"
 
 permissions:
   contents: write
